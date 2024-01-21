@@ -4,7 +4,6 @@
 #include <string>
 
 #include <glad/glad.h>
-//#include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
@@ -17,6 +16,7 @@ public:
 
     void    Compile(const GLchar* vertexSource, const GLchar* fragmentSource);
 
+    void    SetInt(const GLchar* name, GLfloat value, GLboolean useShader = false);
     void    SetFloat(const GLchar* name, GLfloat value, GLboolean useShader = false);
     void    SetInteger(const GLchar* name, GLint value, GLboolean useShader = false);
     void    SetVector2f(const GLchar* name, GLfloat x, GLfloat y, GLboolean useShader = false);
