@@ -5,8 +5,9 @@
 #include <glm/glm.hpp>
 
 #include "Shader.h"
-
 using namespace std;
+
+#define MAX_BONE_INFLUENCE 4
 
 struct Vertex
 {
@@ -15,14 +16,17 @@ struct Vertex
 	glm::vec2 TexCoords;
     glm::vec3 Tangent;
     glm::vec3 Bitangent;
-    glm::vec4 BoneIDs;
-    glm::vec4 Weights;
+    //bone indexes which will influence this vertex
+    int m_BoneIDs[MAX_BONE_INFLUENCE];
+    //weights from each bone
+    float m_Weights[MAX_BONE_INFLUENCE];
 };
 
 struct Texture
 {
 	unsigned int Id;
 	string Type;
+    string Filename;
 };
 
 class Mesh {
